@@ -18,6 +18,19 @@ minimizar: tempo_total_formatura
 sujeito a: restrições curriculares
 ```
 
+## Reprodutibilidade (Seed)
+
+O projeto usa uma seed fixa por padrão para que você consiga repetir o mesmo experimento.
+
+- Seed padrão em `config.py`: `SEED_EXPERIMENTO = 20260325`
+- Para mudar sem editar código, execute com variável de ambiente:
+
+```bash
+SEED_EXPERIMENTO=12345 python main.py
+```
+
+Se mantiver a mesma seed e os mesmos parâmetros, o resultado do experimento será replicável.
+
 ---
 
 ## 2. Representação da Solução (Cromossomo)

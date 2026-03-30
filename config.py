@@ -3,6 +3,11 @@ POPULACAO = 150
 GERACOES = 500
 SEM_MELHORIA_STOP = 100
 
+# Semente padrão para reproducibilidade dos experimentos.
+# Mude este valor (ou use a variavel de ambiente SEED_EXPERIMENTO)
+# quando quiser gerar uma nova sequência aleatoria.
+SEED_EXPERIMENTO = 20260325
+
 CROSSOVER_RATE = 0.85
 MUTATION_RATE = 0.30
 MUTATION_MAX = 0.60

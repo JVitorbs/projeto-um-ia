@@ -1,4 +1,5 @@
 import random
+import os
 from copy import deepcopy
 from individuo import Individuo
 from ga import fitness,selecao,crossover,mutacao
@@ -6,6 +7,27 @@ from config import *
 from disciplinas import disciplinas, PRIMEIRO_SEMESTRE_FIXO
 from logger import salvar_evolucao
 from simulation import simular
+
+
+def _definir_seed_experimento():
+    """Define a seed global do experimento para reproducibilidade."""
+    valor_env = os.getenv("SEED_EXPERIMENTO")
+    if valor_env is not None:
+        try:
+            seed = int(valor_env)
+        except ValueError as exc:
+            raise ValueError(
+                "SEED_EXPERIMENTO deve ser um inteiro, por exemplo: 12345"
+            ) from exc
+    else:
+        seed = SEED_EXPERIMENTO
+
+    random.seed(seed)
+    return seed
+
+
+SEED_USADA = _definir_seed_experimento()
+print(f"Seed do experimento: {SEED_USADA}")
 
 pop=[]
 
@@ -317,6 +339,7 @@ for item in categorias_resumo:
     )
 
 salvar_evolucao({
+    "seed": SEED_USADA,
     "historico": hist,
     "top3": top3_resumo,
     "categorias": categorias_resumo,
