@@ -2,3 +2,6 @@ numpy>=1.26
 matplotlib>=3.8
 pandas>=2.2
 tqdm>=4.66
+scipy>=1.11
+networkx>=3.2
+scikit-fuzzy>=0.4.2
