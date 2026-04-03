@@ -1,0 +1,25 @@
+================================================================================
+COMPARATIVO: ALGORITMO GENÉTICO vs LÓGICA FUZZY
+================================================================================
+
+ALGORITMO GENÉTICO
+--------------------------------------------------------------------------------
+Melhor Fitness:   28.00
+Tempo Formatura:  11.33 semestres
+Reprovações:      6.00
+Perfil:           17h/sem estudo
+Seed:             20260325
+
+LÓGICA FUZZY (com Hill-Climbing)
+--------------------------------------------------------------------------------
+Melhor Fitness:   141.00
+Tempo Formatura:  11.33 semestres
+Reprovações:      9.33
+Perfil:           15h/sem estudo
+Seed:             20260325
+
+COMPARAÇÃO
+--------------------------------------------------------------------------------
+Difference em Fitness: +403.6%
+GA é 5.04x melhor
+

@@ -1,0 +1,52 @@
+================================================================================
+TOP 3 MELHORES SOLUÇÕES - ALGORITMO GENÉTICO
+================================================================================
+
+POSIÇÃO #1
+--------------------------------------------------------------------------------
+Fitness:               28.00
+Tempo de Formatura:    11.33 semestres
+Reprovações Médias:    6.00
+Perfil:                17h/sem estudo
+
+Detalhes do Perfil:
+  - trabalha: False
+  - estagio: False
+  - ic: False
+  - escola_publica: False
+  - mora_na_cidade: True
+  - horas_estudo: 17
+
+
+POSIÇÃO #2
+--------------------------------------------------------------------------------
+Fitness:               70.67
+Tempo de Formatura:    11.00 semestres
+Reprovações Médias:    6.67
+Perfil:                17h/sem estudo
+
+Detalhes do Perfil:
+  - trabalha: False
+  - estagio: False
+  - ic: False
+  - escola_publica: False
+  - mora_na_cidade: True
+  - horas_estudo: 17
+
+
+POSIÇÃO #3
+--------------------------------------------------------------------------------
+Fitness:               84.17
+Tempo de Formatura:    11.00 semestres
+Reprovações Médias:    6.33
+Perfil:                17h/sem estudo
+
+Detalhes do Perfil:
+  - trabalha: False
+  - estagio: False
+  - ic: False
+  - escola_publica: False
+  - mora_na_cidade: True
+  - horas_estudo: 17
+
+

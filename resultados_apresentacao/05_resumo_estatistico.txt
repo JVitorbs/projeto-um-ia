@@ -1,0 +1,22 @@
+================================================================================
+RESUMO ESTATÍSTICO
+================================================================================
+
+ALGORITMO GENÉTICO
+--------------------------------------------------------------------------------
+Total de gerações:         126
+Melhor fitness (final):    28.00
+Fitness inicial (geração 1): 124.67
+Melhoria total:            96.67
+% melhoria:                77.5%
+Tempo (semestres) final:   11.3
+
+LÓGICA FUZZY
+--------------------------------------------------------------------------------
+Total de tentativas:       40
+Melhor fitness (final):    130.50
+Fitness inicial (tentativa 1): 172.33
+Melhoria total:            41.83
+% melhoria:                24.3%
+Tempo (semestres) final:   11.0
+

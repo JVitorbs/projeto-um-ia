@@ -1,0 +1,52 @@
+================================================================================
+TOP 3 MELHORES SOLUÇÕES - LÓGICA FUZZY
+================================================================================
+
+POSIÇÃO #1
+--------------------------------------------------------------------------------
+Fitness:               141.00
+Tempo de Formatura:    11.33 semestres
+Reprovações Médias:    9.33
+Perfil:                15h/sem estudo
+
+Detalhes do Perfil:
+  - trabalha: False
+  - estagio: False
+  - ic: False
+  - escola_publica: False
+  - mora_na_cidade: True
+  - horas_estudo: 15
+
+
+POSIÇÃO #2
+--------------------------------------------------------------------------------
+Fitness:               146.17
+Tempo de Formatura:    11.33 semestres
+Reprovações Médias:    11.00
+Perfil:                5h/sem estudo
+
+Detalhes do Perfil:
+  - trabalha: False
+  - estagio: False
+  - ic: False
+  - escola_publica: False
+  - mora_na_cidade: True
+  - horas_estudo: 5
+
+
+POSIÇÃO #3
+--------------------------------------------------------------------------------
+Fitness:               159.00
+Tempo de Formatura:    11.00 semestres
+Reprovações Médias:    12.00
+Perfil:                14h/sem estudo
+
+Detalhes do Perfil:
+  - trabalha: False
+  - estagio: False
+  - ic: False
+  - escola_publica: False
+  - mora_na_cidade: True
+  - horas_estudo: 14
+
+

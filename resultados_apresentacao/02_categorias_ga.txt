@@ -1,0 +1,52 @@
+================================================================================
+RESULTADOS POR CATEGORIA DE ALUNO - GA
+================================================================================
+
+GERAL
+--------------------------------------------------------------------------------
+Tempo médio:           11.25 semestres
+Tempo mínimo:          10 semestres
+Fitness médio:         116.21
+Reprovações médias:    9.08
+Disciplinas não concluídas: 0.00
+
+IC
+--------------------------------------------------------------------------------
+Tempo médio:           12.08 semestres
+Tempo mínimo:          11 semestres
+Fitness médio:         197.12
+Reprovações médias:    15.75
+Disciplinas não concluídas: 0.00
+
+ESCOLA_PUBLICA
+--------------------------------------------------------------------------------
+Tempo médio:           12.50 semestres
+Tempo mínimo:          10 semestres
+Fitness médio:         237.00
+Reprovações médias:    17.50
+Disciplinas não concluídas: 0.00
+
+FORA_CIDADE
+--------------------------------------------------------------------------------
+Tempo médio:           13.08 semestres
+Tempo mínimo:          11 semestres
+Fitness médio:         263.42
+Reprovações médias:    17.67
+Disciplinas não concluídas: 0.00
+
+ESTAGIO
+--------------------------------------------------------------------------------
+Tempo médio:           13.17 semestres
+Tempo mínimo:          11 semestres
+Fitness médio:         257.96
+Reprovações médias:    17.25
+Disciplinas não concluídas: 0.00
+
+TRABALHA
+--------------------------------------------------------------------------------
+Tempo médio:           14.25 semestres
+Tempo mínimo:          12 semestres
+Fitness médio:         315.00
+Reprovações médias:    21.50
+Disciplinas não concluídas: 0.00
+

@@ -1,0 +1,52 @@
+================================================================================
+RESULTADOS POR CATEGORIA DE ALUNO - FUZZY
+================================================================================
+
+GERAL
+--------------------------------------------------------------------------------
+Tempo médio:           11.00 semestres
+Tempo mínimo:          10 semestres
+Fitness médio:         128.88
+Reprovações médias:    8.58
+Disciplinas não concluídas: 0.00
+
+IC
+--------------------------------------------------------------------------------
+Tempo médio:           11.42 semestres
+Tempo mínimo:          10 semestres
+Fitness médio:         222.04
+Reprovações médias:    12.92
+Disciplinas não concluídas: 0.00
+
+FORA_CIDADE
+--------------------------------------------------------------------------------
+Tempo médio:           12.67 semestres
+Tempo mínimo:          10 semestres
+Fitness médio:         309.17
+Reprovações médias:    19.17
+Disciplinas não concluídas: 0.00
+
+ESCOLA_PUBLICA
+--------------------------------------------------------------------------------
+Tempo médio:           13.00 semestres
+Tempo mínimo:          11 semestres
+Fitness médio:         295.08
+Reprovações médias:    16.33
+Disciplinas não concluídas: 0.00
+
+ESTAGIO
+--------------------------------------------------------------------------------
+Tempo médio:           13.00 semestres
+Tempo mínimo:          11 semestres
+Fitness médio:         290.75
+Reprovações médias:    17.33
+Disciplinas não concluídas: 0.00
+
+TRABALHA
+--------------------------------------------------------------------------------
+Tempo médio:           14.58 semestres
+Tempo mínimo:          12 semestres
+Fitness médio:         386.54
+Reprovações médias:    24.08
+Disciplinas não concluídas: 0.00
+
