@@ -860,12 +860,12 @@
         "mora_na_cidade": true,
         "horas_estudo": 18
       },
-      "tempo_medio": 11.0,
-      "tempo_min": 10,
-      "fitness_medio": 128.875,
-      "reprov_medio": 8.5833,
+      "tempo_medio": 11.5833,
+      "tempo_min": 11,
+      "fitness_medio": 116.0417,
+      "reprov_medio": 8.25,
       "nao_concluidas_media": 0.0,
-      "indice_individuo_referencia": 38
+      "indice_individuo_referencia": 37
     },
     {
       "categoria": "ic",
@@ -877,29 +877,12 @@
         "mora_na_cidade": true,
         "horas_estudo": 18
       },
-      "tempo_medio": 11.4167,
-      "tempo_min": 10,
-      "fitness_medio": 222.0417,
-      "reprov_medio": 12.9167,
+      "tempo_medio": 12.5,
+      "tempo_min": 11,
+      "fitness_medio": 229.7083,
+      "reprov_medio": 13.4167,
       "nao_concluidas_media": 0.0,
-      "indice_individuo_referencia": 27
-    },
-    {
-      "categoria": "fora_cidade",
-      "perfil": {
-        "trabalha": false,
-        "estagio": false,
-        "ic": false,
-        "escola_publica": false,
-        "mora_na_cidade": false,
-        "horas_estudo": 18
-      },
-      "tempo_medio": 12.6667,
-      "tempo_min": 10,
-      "fitness_medio": 309.1667,
-      "reprov_medio": 19.1667,
-      "nao_concluidas_media": 0.0,
-      "indice_individuo_referencia": 26
+      "indice_individuo_referencia": 10
     },
     {
       "categoria": "escola_publica",
@@ -911,29 +894,29 @@
         "mora_na_cidade": true,
         "horas_estudo": 18
       },
-      "tempo_medio": 13.0,
+      "tempo_medio": 12.9167,
       "tempo_min": 11,
-      "fitness_medio": 295.0833,
-      "reprov_medio": 16.3333,
+      "fitness_medio": 300.0417,
+      "reprov_medio": 17.4167,
       "nao_concluidas_media": 0.0,
-      "indice_individuo_referencia": 12
+      "indice_individuo_referencia": 7
     },
     {
-      "categoria": "estagio",
+      "categoria": "fora_cidade",
       "perfil": {
         "trabalha": false,
-        "estagio": true,
+        "estagio": false,
         "ic": false,
         "escola_publica": false,
-        "mora_na_cidade": true,
+        "mora_na_cidade": false,
         "horas_estudo": 18
       },
-      "tempo_medio": 13.0,
-      "tempo_min": 11,
-      "fitness_medio": 290.75,
-      "reprov_medio": 17.3333,
+      "tempo_medio": 13.25,
+      "tempo_min": 10,
+      "fitness_medio": 294.5417,
+      "reprov_medio": 19.25,
       "nao_concluidas_media": 0.0,
-      "indice_individuo_referencia": 19
+      "indice_individuo_referencia": 39
     },
     {
       "categoria": "trabalha",
@@ -945,12 +928,29 @@
         "mora_na_cidade": true,
         "horas_estudo": 18
       },
-      "tempo_medio": 14.5833,
-      "tempo_min": 12,
-      "fitness_medio": 386.5417,
-      "reprov_medio": 24.0833,
+      "tempo_medio": 13.8333,
+      "tempo_min": 11,
+      "fitness_medio": 420.125,
+      "reprov_medio": 22.5833,
       "nao_concluidas_media": 0.0,
-      "indice_individuo_referencia": 3
+      "indice_individuo_referencia": 13
+    },
+    {
+      "categoria": "estagio",
+      "perfil": {
+        "trabalha": false,
+        "estagio": true,
+        "ic": false,
+        "escola_publica": false,
+        "mora_na_cidade": true,
+        "horas_estudo": 18
+      },
+      "tempo_medio": 14.25,
+      "tempo_min": 11,
+      "fitness_medio": 322.9167,
+      "reprov_medio": 20.8333,
+      "nao_concluidas_media": 0.0,
+      "indice_individuo_referencia": 37
     }
   ]
 }
