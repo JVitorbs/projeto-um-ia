@@ -59,7 +59,7 @@ def _ordenar_unicos(disciplinas_lista):
     return ordenadas
 
 
-def simular(individuo, perfil):
+def simular_detalhado(individuo, perfil):
 
     aprovadas = set()
     todas_disciplinas = {
@@ -71,6 +71,7 @@ def simular(individuo, perfil):
     violacoes_prereq = 0
     violacoes_carga = 0
     ultimo_semestre_ativo = 0
+    aprovadas_por_semestre = {}
     total_semestres_limite = SEMESTRES_MAX + SEMESTRES_EXTRA_SIMULACAO
 
     for s_idx in range(total_semestres_limite):
@@ -123,6 +124,7 @@ def simular(individuo, perfil):
                 pendentes_prox.append(disc)
             else:
                 aprovadas.add(disc)
+                aprovadas_por_semestre.setdefault(s_idx + 1, []).append(disc)
 
         pendentes = _ordenar_unicos(pendentes_prox)
 
@@ -144,11 +146,31 @@ def simular(individuo, perfil):
     individuo.optativas_insuficientes = optativas_insuficientes
     individuo.disciplinas_nao_concluidas = disciplinas_nao_concluidas
 
+    optativas_pagas = sorted(
+        [d for d in aprovadas if disciplinas[d].get("tipo") == "optativa"]
+    )
+
+    return {
+        "tempo_formatura": ultimo_semestre_ativo,
+        "reprovacoes": reprovacoes,
+        "violacoes_prereq": violacoes_prereq,
+        "violacoes_carga": violacoes_carga,
+        "optativas_insuficientes": optativas_insuficientes,
+        "disciplinas_nao_concluidas": disciplinas_nao_concluidas,
+        "aprovadas": sorted(aprovadas),
+        "aprovadas_por_semestre": aprovadas_por_semestre,
+        "optativas_pagas": optativas_pagas,
+        "carga_optativas_pagas": carga_optativas,
+    }
+
+
+def simular(individuo, perfil):
+    resultado = simular_detalhado(individuo, perfil)
     return (
-        ultimo_semestre_ativo,
-        reprovacoes,
-        violacoes_prereq,
-        violacoes_carga,
-        optativas_insuficientes,
-        disciplinas_nao_concluidas,
+        resultado["tempo_formatura"],
+        resultado["reprovacoes"],
+        resultado["violacoes_prereq"],
+        resultado["violacoes_carga"],
+        resultado["optativas_insuficientes"],
+        resultado["disciplinas_nao_concluidas"],
     )

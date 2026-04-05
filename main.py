@@ -6,7 +6,7 @@ from ga import fitness,selecao,crossover,mutacao
 from config import *
 from disciplinas import disciplinas, PRIMEIRO_SEMESTRE_FIXO
 from logger import salvar_evolucao
-from simulation import simular
+from simulation import simular, simular_detalhado
 
 
 def _definir_seed_experimento():
@@ -173,6 +173,47 @@ def _str_perfil(p):
     return ", ".join(partes) if partes else "sem atividades extras"
 
 
+def _imprimir_grade_realizada(resultado_simulacao):
+    grade_realizada = resultado_simulacao.get("aprovadas_por_semestre", {})
+    if not grade_realizada:
+        print("  Grade realizada: nenhuma disciplina aprovada na simulação.")
+        return
+
+    for semestre_num in sorted(grade_realizada.keys()):
+        disciplinas_sem = grade_realizada[semestre_num]
+        carga_semestre = sum(disciplinas[c]["carga"] for c in disciplinas_sem if c in disciplinas)
+        marcador = " (fixo)" if semestre_num == 1 else ""
+        print(f"  Semestre {semestre_num}{marcador} - {carga_semestre}h")
+        for codigo in disciplinas_sem:
+            info = disciplinas.get(codigo, {})
+            nome = info.get("nome", codigo)
+            tipo = info.get("tipo", "")
+            sufixo = " [optativa]" if tipo == "optativa" else ""
+            print(f"    - {codigo} - {nome}{sufixo}")
+
+
+def _listar_optativas_planejadas(ind):
+    return sorted(
+        {
+            codigo
+            for semestre in ind.grade
+            for codigo in semestre
+            if disciplinas.get(codigo, {}).get("tipo") == "optativa"
+        }
+    )
+
+
+def _imprimir_optativas(codigos, titulo):
+    carga = sum(disciplinas[c]["carga"] for c in codigos if c in disciplinas)
+    print(f"  {titulo}: {len(codigos)} disciplinas ({carga}h)")
+    if not codigos:
+        print("    - nenhuma")
+        return
+    for codigo in codigos:
+        nome = disciplinas.get(codigo, {}).get("nome", codigo)
+        print(f"    - {codigo} - {nome}")
+
+
 top3 = pop[:3]
 top3_resumo = []
 for rank, ind in enumerate(top3, 1):
@@ -189,14 +230,9 @@ for rank, ind in enumerate(top3, 1):
         "perfil": dict(ind.perfil),
         "perfil_str": _str_perfil(ind.perfil),
     })
-    for i, semestre in enumerate(ind.grade):
-        if semestre:
-            carga_semestre = sum(disciplinas[c]["carga"] for c in semestre if c in disciplinas)
-            marcador = " (fixo)" if i == 0 else ""
-            print(f"  Semestre {i + 1}{marcador} - {carga_semestre}h")
-            for codigo in semestre:
-                nome = disciplinas.get(codigo, {}).get("nome", codigo)
-                print(f"    - {codigo} - {nome}")
+    resultado_top = simular_detalhado(deepcopy(ind), ind.perfil)
+    print("  Grade realizada na simulação (perfil do indivíduo):")
+    _imprimir_grade_realizada(resultado_top)
 
 
 def _fitness_componentes(tempo, reprov, viol_prereq, viol_carga, opt_insuf, nao_concluidas):
@@ -308,6 +344,7 @@ PERFIS_CATEGORIA = {
 
 print("\nResumo por categoria (melhor plano entre os indivíduos finais):")
 categorias_resumo = []
+melhor_por_categoria = {}
 for nome_cat, perfil_cat in PERFIS_CATEGORIA.items():
     melhor_idx = -1
     melhor_res = None
@@ -317,6 +354,8 @@ for nome_cat, perfil_cat in PERFIS_CATEGORIA.items():
         if melhor_res is None or res["fitness_medio"] < melhor_res["fitness_medio"]:
             melhor_res = res
             melhor_idx = idx
+
+    melhor_por_categoria[nome_cat] = deepcopy(pop[melhor_idx])
 
     categorias_resumo.append({
         "categoria": nome_cat,
@@ -337,6 +376,26 @@ for item in categorias_resumo:
         f"fitness médio={item['fitness_medio']:.2f} | "
         f"indivíduo referência=TOP#{item['indice_individuo_referencia']} da população final"
     )
+
+print("\nGrade do melhor indivíduo por categoria:")
+for item in categorias_resumo:
+    nome_cat = item["categoria"]
+    melhor_ind = melhor_por_categoria[nome_cat]
+    print(f"\n{'='*60}")
+    print(
+        f"  Categoria: {nome_cat}  |  fitness médio={item['fitness_medio']:.2f}  |  "
+        f"tempo médio={item['tempo_medio']:.2f} sem"
+    )
+    print(f"  Perfil avaliado: {item['perfil']}")
+    print(f"{'='*60}")
+    resultado_cat = simular_detalhado(deepcopy(melhor_ind), item["perfil"])
+    print("  Grade realizada na simulação desta categoria:")
+    _imprimir_grade_realizada(resultado_cat)
+    opt_planejadas = _listar_optativas_planejadas(melhor_ind)
+    opt_pagas = resultado_cat["optativas_pagas"]
+    print("  --- Optativas ---")
+    _imprimir_optativas(opt_planejadas, "Optativas planejadas na grade")
+    _imprimir_optativas(opt_pagas, "Optativas pagas (aprovadas na simulação)")
 
 salvar_evolucao({
     "seed": SEED_USADA,
